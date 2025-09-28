@@ -1,0 +1,298 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens with brighter yellow and enhanced contrast */
+  --background: oklch(1 0 0); /* White */
+  --foreground: oklch(0.2 0.15 258.34); /* Darker Royal Blue for better contrast */
+  --card: oklch(0.97 0.005 106.47); /* Light Gray #F3F4F6 */
+  --card-foreground: oklch(0.2 0.15 258.34); /* Darker Royal Blue */
+  --popover: oklch(1 0 0); /* White */
+  --popover-foreground: oklch(0.2 0.15 258.34); /* Darker Royal Blue */
+  --primary: oklch(0.75 0.2 85.87); /* Brighter Yellow */
+  --primary-foreground: oklch(0.15 0.15 258.34); /* Very dark Royal Blue */
+  --secondary: oklch(0.45 0.2 264.05); /* Darker Indigo */
+  --secondary-foreground: oklch(1 0 0); /* White */
+  --muted: oklch(0.97 0.005 106.47); /* Light Gray */
+  --muted-foreground: oklch(0.4 0.1 258.34); /* Medium Royal Blue for better readability */
+  --accent: oklch(0.45 0.2 264.05); /* Darker Indigo */
+  --accent-foreground: oklch(1 0 0); /* White */
+  --destructive: oklch(0.55 0.25 27.33); /* Red #DC2626 */
+  --destructive-foreground: oklch(1 0 0); /* White */
+  --border: oklch(0.92 0.005 106.47); /* Light Border #E5E7EB */
+  --input: oklch(0.97 0.005 106.47); /* Light Gray */
+  --ring: oklch(0.45 0.2 264.05 / 0.5); /* Darker Indigo with opacity */
+  --chart-1: oklch(0.75 0.2 85.87); /* Brighter Yellow */
+  --chart-2: oklch(0.2 0.15 258.34); /* Darker Royal Blue */
+  --chart-3: oklch(0.45 0.2 264.05); /* Darker Indigo */
+  --chart-4: oklch(0.97 0.005 106.47); /* Light Gray */
+  --chart-5: oklch(0.55 0.25 27.33); /* Red */
+  --radius: 0.5rem;
+  --sidebar: oklch(1 0 0); /* White */
+  --sidebar-foreground: oklch(0.2 0.15 258.34); /* Darker Royal Blue */
+  --sidebar-primary: oklch(0.75 0.2 85.87); /* Brighter Yellow */
+  --sidebar-primary-foreground: oklch(0.15 0.15 258.34); /* Very dark Royal Blue */
+  --sidebar-accent: oklch(0.45 0.2 264.05); /* Darker Indigo */
+  --sidebar-accent-foreground: oklch(1 0 0); /* White */
+  --sidebar-border: oklch(0.92 0.005 106.47); /* Light Border */
+  --sidebar-ring: oklch(0.45 0.2 264.05 / 0.5); /* Darker Indigo with opacity */
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.85 0.15 85.87); /* Brighter Yellow for dark mode */
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.55 0.2 264.05); /* Indigo */
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.55 0.2 264.05); /* Indigo */
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.85 0.15 85.87); /* Brighter Yellow */
+  --chart-2: oklch(0.25 0.15 258.34); /* Royal Blue */
+  --chart-3: oklch(0.55 0.2 264.05); /* Indigo */
+  --chart-4: oklch(0.269 0 0);
+  --chart-5: oklch(0.55 0.25 27.33); /* Red */
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.85 0.15 85.87); /* Brighter Yellow */
+  --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added custom animations and smooth scrolling */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.6);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Added AOS-style scroll animations */
+.aos-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.aos-fade-up.aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.aos-fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.aos-fade-left.aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.aos-fade-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.aos-fade-right.aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.aos-zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.aos-zoom-in.aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Added custom gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #1e3a8a 0%, #4f46e5 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #fbbf24 0%, #eab308 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Added high contrast utility classes for accessibility */
+.text-high-contrast {
+  color: oklch(0.15 0.15 258.34); /* Very dark blue for maximum contrast */
+}
+
+.bg-primary-accessible {
+  background-color: oklch(0.7 0.2 85.87); /* Brighter yellow for better visibility */
+}
+
+.border-primary-accessible {
+  border-color: oklch(0.7 0.2 85.87); /* Brighter yellow for better visibility */
+}
+
+.badge-high-contrast {
+  background-color: oklch(0.15 0.15 258.34); /* Dark blue background */
+  color: oklch(1 0 0); /* White text */
+  border-color: oklch(0.15 0.15 258.34); /* Dark blue border */
+}
+
+/* Added floating button styles */
+.floating-emi-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 40;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: pulse-glow 2s infinite;
+}
+
+@media (min-width: 768px) {
+  .floating-emi-btn {
+    display: none;
+  }
+}
