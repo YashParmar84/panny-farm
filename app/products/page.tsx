@@ -417,9 +417,6 @@ export default function ProductsPage() {
                             <ArrowRight className="w-4 h-4 ml-2" />
                           </Button>
                         </Link>
-                        <Button variant="outline" size="sm" className="px-3 bg-transparent">
-                          Apply
-                        </Button>
                       </div>
                     </div>
                   </CardContent>
