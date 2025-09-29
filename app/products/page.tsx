@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import Header from "../header/page"
@@ -359,22 +359,20 @@ export default function ProductsPage() {
                   key={product.id}
                   className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-primary/50 relative"
                 >
-                  {product.popular && (
-                    <Badge className="absolute -top-2 -right-2 bg-primary text-primary-foreground">Popular</Badge>
-                  )}
+                
                   <CardHeader>
                     <div className="flex items-center justify-between mb-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <Badge variant="outline" className="text-xs">
+                      {/* <Badge variant="outline" className="text-xs">
                         {product.category}
-                      </Badge>
+                      </Badge> */}
                     </div>
                     <CardTitle className="text-xl">{product.title}</CardTitle>
-                    <CardDescription className="text-muted-foreground">{product.description}</CardDescription>
+                    <CardDescription className="text-muted-foreground h-20">{product.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  {/* <CardContent>
                     <div className="space-y-4">
                       <div className="grid grid-cols-2 gap-4 text-sm">
                         <div>
@@ -419,7 +417,15 @@ export default function ProductsPage() {
                         </Link>
                       </div>
                     </div>
-                  </CardContent>
+                  </CardContent> */}
+                   <div className="flex gap-2 pt-4 p-4">
+                        <Link href={`/products/${product.id}`} className="flex-1">
+                          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                            Learn More
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </Button>
+                        </Link>
+                      </div>
                 </Card>
               )
             })}
@@ -463,7 +469,7 @@ export default function ProductsPage() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <img
-                  src="/pennyfarm-logo.jpeg"
+                  src="/images/pennyfarm-logo.png"
                   alt="Penny Farm Finance Logo"
                   className="h-8 w-auto"
                 />
@@ -530,8 +536,8 @@ export default function ProductsPage() {
               <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
               <div className="space-y-2 text-background/70">
                 <p>📞 +91-98765-43210</p>
-                <p>✉️ info@pennyfarmfinance.com</p>
-                <p>📍 Mumbai, Maharashtra, India</p>
+                <p>✉️ pennyfarmfinance@gmail.com</p>
+                <p>📍 623, Dev Atelier, 100 Feet Anand Nagar Rd, Prahlad Nagar, Ahmedabad, Gujarat 380015</p>
               </div>
             </div>
           </div>

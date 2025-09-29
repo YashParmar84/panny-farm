@@ -31,6 +31,8 @@ import {
   MapPin,
 } from "lucide-react"
 import Link from "next/link"
+// import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter, SheetClose } from "@/components/ui/sheet"
+// import { Label } from "@/components/ui/label"
 
 const useAOS = () => {
   useEffect(() => {
@@ -96,7 +98,7 @@ const products = [
     tenure: "Up to 30 years",
   },
   {
-    id: "working-capital",
+    id: "working-capital-demand-loan",
     title: "Working Capital Loan",
     description: "Maintain smooth business operations with our working capital solutions.",
     icon: TrendingUp,
@@ -169,12 +171,12 @@ const blogs = [
 ]
 
 const bankLogos = [
-  { name: "BOB", logo: "BOB" },
-  { name: "HDFC", logo: "HDFC" },
-  { name: "ICICI", logo: "ICICI" },
-  { name: "KOTAK", logo: "KOTAK" },
-  { name: "SBI", logo: "SBI" },
-  { name: "AXIS", logo: "AXIS" },
+  { name: "BOB", src: "/placeholder-logo.png" },
+  { name: "HDFC", src: "/placeholder-logo.png" },
+  { name: "ICICI", src: "/placeholder-logo.png" },
+  { name: "KOTAK", src: "/placeholder-logo.png" },
+  { name: "SBI", src: "/placeholder-logo.png" },
+  { name: "AXIS", src: "/placeholder-logo.png" },
 ]
 
 export default function HomePage() {
@@ -234,32 +236,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
 
       <Header />
-      {/* Floating Mobile Buttons */}
-      <div className="fixed bottom-4 left-4 right-4 md:hidden z-50">
-        <div className="flex justify-center items-center gap-3 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm shadow-lg">
-          <Button
-            size="lg"
-            className="w-14 h-14 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl"
-            onClick={() => setShowEMICalculator(true)}
-          >
-            <Calculator className="w-6 h-6" />
-          </Button>
-          <Button
-            size="lg"
-            className="w-14 h-14 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl"
-            onClick={() => window.location.href = 'tel:+919664982919'}
-          >
-            <Phone className="w-6 h-6" />
-          </Button>
-          <Button
-            size="lg"
-            className="w-14 h-14 rounded-xl bg-green-500 hover:bg-green-600 text-white shadow-xl"
-            onClick={() => window.location.href = 'https://wa.me/919664982919'}
-          >
-            <MessageCircle className="w-6 h-6" />
-          </Button>
-        </div>
-      </div>
+      {/* Floating Mobile Buttons moved to global layout */}
       {/* <Button
         className="floating-emi-btn bg-primary hover:bg-primary/90 text-primary-foreground md:hidden"
         onClick={() => setShowEMICalculator(true)}
@@ -400,8 +377,8 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
                     index === currentBankIndex ? "scale-110 opacity-100" : "scale-90 opacity-60"
                   }`}
                 >
-                  <div className="w-20 h-20 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <span className="font-bold text-primary text-sm">{bank.logo}</span>
+                  <div className="w-20 h-20 bg-primary/10 rounded-lg flex items-center justify-center overflow-hidden">
+                    <img src={bank.src} alt={`${bank.name} logo`} className="max-w-[70%] max-h-[70%] object-contain" />
                   </div>
                 </div>
               ))}
@@ -735,7 +712,7 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
                   <Mail className="w-8 h-8 text-primary" />
                   <div>
                     <h3 className="text-xl font-semibold mb-1">Email</h3>
-                    <p className="text-muted-foreground">info@pennyfarmfinance.com</p>
+                    <p className="text-muted-foreground">pennyfarmfinance@gmail.com</p>
                   </div>
                 </div>
               </Card>
@@ -828,7 +805,7 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <img
-                  src="/pennyfarm-logo.jpeg"
+                  src="/images/pennyfarm-logo.png"
                   alt="Penny Farm Finance Logo"
                   className="h-8 w-auto"
                 />
@@ -914,8 +891,8 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
               <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
               <div className="space-y-2 text-background/70">
                 <p>📞 +91-96649 82919</p>
-                <p>✉️ info@pennyfarmfinance.com</p>
-                <p>📍 Mumbai, Maharashtra, India</p>
+                <p>✉️ pennyfarmfinance@gmail.com</p>
+                <p>📍 623, Dev Atelier, 100 Feet Anand Nagar Rd, Prahlad Nagar, Ahmedabad, Gujarat 380015</p>
               </div>
             </div>
           </div>
@@ -926,7 +903,7 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
         </div>
       </footer>
 
-      {/* EMI Calculator Modal */}
+      {/* EMI Calculator handled by existing header component */}
      
     </div>
   )

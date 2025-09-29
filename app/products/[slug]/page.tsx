@@ -202,19 +202,23 @@ LAP allows for EMIs which means easy monthly payments. It's like having a lower 
     detailedDescription: `Maintaining optimum working capital is essential to a business's efficient running. A working capital demand loan is thus available as a flexible financing option that allows businesses to access funds during any capital shortage. This credit facility is readily available to fulfil the operational funding needs.
 
 Now that you are familiar with WCDL, let us take a closer look at its features and advantages:
-Features
-Flexibility: WCDL provides flexibility in both repayment and fund utilisation, allowing businesses to address immediate working capital needs efficiently
-Quick access: Businesses can access funds quickly, enabling them to manage unexpected expenses or cash flow gaps
-No fixed repayment schedule: Unlike traditional loans, WCDL does not have a fixed repayment schedule. Lenders can demand repayment at any time
-Interest on utilised amount: Interest is charged only on the amount of funds actually used, meaning businesses only pay interest on the portion they utilise
-Easy renewal: WCDL facilities can be renewed or extended after repayment, providing continuous access to working capital as needed
-Advantages
-Enhances cash flow: WCDL helps businesses maintain healthy cash flow by providing immediate access to funds, ensuring smooth day-to-day operations
-Suitable for short-term needs: Ideal for managing short-term working capital needs, such as dealing with seasonal fluctuations or temporary cash flow gaps
 
-When Would Taking a Working Capital Demand Loan be a good idea?
+**Features**
+• Flexibility: WCDL provides flexibility in both repayment and fund utilisation, allowing businesses to address immediate working capital needs efficiently
+• Quick access: Businesses can access funds quickly, enabling them to manage unexpected expenses or cash flow gaps
+• No fixed repayment schedule: Unlike traditional loans, WCDL does not have a fixed repayment schedule. Lenders can demand repayment at any time
+• Interest on utilised amount: Interest is charged only on the amount of funds actually used, meaning businesses only pay interest on the portion they utilise
+• Easy renewal: WCDL facilities can be renewed or extended after repayment, providing continuous access to working capital as needed
+
+**Advantages**
+• Enhances cash flow: WCDL helps businesses maintain healthy cash flow by providing immediate access to funds, ensuring smooth day-to-day operations
+• Suitable for short-term needs: Ideal for managing short-term working capital needs, such as dealing with seasonal fluctuations or temporary cash flow gaps
+
+**When Would Taking a Working Capital Demand Loan be a good idea?**
 WCDLs are ideal debt instruments for businesses facing a lean season. When sales dip or large amounts of receivables remain unpaid, it can severely impact a business's liquidity, especially for growing businesses. A WCDL is a short-term loan that helps meet regular capital needs and maintain operational efficiency. It ensures smooth cash flow for daily expenses, such as raw material purchases, payroll, and supplier payments, while helping maintain healthy liquidity. This makes it an effective short-term solution for businesses experiencing temporary cash shortages.
+
 WCDLs are perfect for replenishing funds in the short term and bridging the gap between inflows and outflows. They are especially useful for businesses with cyclical operations, where demand fluctuates seasonally. During lean periods, WCDLS can cover financial needs, allowing the business to operate at full capacity during peak seasons.
+
 With a WCDL, the borrower has full control over how the funds are spent. Plus, as a debt financing tool, it does not affect the company's equity.`,
     originalFaqs: [
       {
@@ -1550,47 +1554,30 @@ export default function ProductDetailPage() {
         </div>
       </div>
 
-      {/* Product Hero */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-1 gap-12 items-center md:p-0 ">
-            <div>
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
-                  <Icon className="w-8 h-8 text-primary" />
-                </div>
-                <div>
-                  <Badge className="mb-2">{product.category}</Badge>
-                  <h1 className="text-4xl font-bold">{product.title}</h1>
-                </div>
+      {/* Product Hero - Background image with bottom fade and overlay content */}
+      <section className="relative py-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={`https://img.freepik.com/premium-photo/businessmen-put-coins-savings-bottles-including-graphs-financial-growth-money-saving-ideas-sustainable-investments_104677-90.jpg`}
+            alt={product.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl">
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="w-16 h-16 bg-background/60 backdrop-blur rounded-xl flex items-center justify-center border border-border/50">
+                <Icon className="w-8 h-8 text-primary" />
               </div>
-              <p className="text-xl text-muted-foreground mb-8">{product.description}</p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 ">
-                <div className="text-center p-4 bg-background rounded-lg border border-border">
-                  <div className="text-2xl font-bold text-primary">{product.rate}</div>
-                  <div className="text-sm text-muted-foreground">Interest Rate</div>
-                </div>
-                <div className="text-center p-4 bg-background rounded-lg border border-border">
-                  <div className="text-2xl font-bold text-primary">{product.amount}</div>
-                  <div className="text-sm text-muted-foreground">Loan Amount</div>
-                </div>
-                <div className="text-center p-4 bg-background rounded-lg border border-border">
-                  <div className="text-2xl font-bold text-primary">{product.tenure}</div>
-                  <div className="text-sm text-muted-foreground">Tenure</div>
-                </div>
-                <div className="text-center p-4 bg-background rounded-lg border border-border">
-                  <div className="text-2xl font-bold text-primary">{product.processing}</div>
-                  <div className="text-sm text-muted-foreground">Processing Fee</div>
-                </div>
+              <div>
+                <Badge className="mb-2">{product.category}</Badge>
+                <h1 className="text-4xl font-bold text-foreground">{product.title}</h1>
               </div>
             </div>
-            <div>
-              {/* <img
-                src={`/abstract-geometric-shapes.png?height=500&width=600&query=${product.title.toLowerCase()} financial service`}
-                alt={product.title}
-                className="w-full h-auto rounded-2xl shadow-xl"
-              /> */}
-            </div>
+            <p className="text-xl text-foreground/90 mb-8 max-w-2xl">
+              {product.description}
+            </p>
           </div>
         </div>
       </section>
@@ -1599,7 +1586,6 @@ export default function ProductDetailPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Key Features */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -1618,7 +1604,6 @@ export default function ProductDetailPage() {
                 </div>
               </CardContent>
             </Card>
-            {/* Benefits */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -1664,10 +1649,9 @@ export default function ProductDetailPage() {
       </section>
 
       {/* Eligibility & Documents */}
-      <section className="py-20 bg-muted/30">
+      {/* <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Eligibility */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -1686,7 +1670,6 @@ export default function ProductDetailPage() {
                 </div>
               </CardContent>
             </Card>
-            {/* Documents */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -1707,7 +1690,7 @@ export default function ProductDetailPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section - Using the EXACT FAQs */}
       <section className="py-20">
@@ -1764,7 +1747,7 @@ export default function ProductDetailPage() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <img
-                  src="/pennyfarm-logo.jpeg"
+                  src="/images/pennyfarm-logo.png"
                   alt="Penny Farm Finance Logo"
                   className="h-8 w-auto"
                 />
@@ -1821,7 +1804,7 @@ export default function ProductDetailPage() {
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <div className="space-y-2 text-background/70">
                 <p>📞 +91 96649 82919</p>
-                <p>✉️ info@pennyfarmfinance.com</p>
+                <p>✉️ pennyfarmfinance@gmail.com</p>
               </div>
             </div>
           </div>

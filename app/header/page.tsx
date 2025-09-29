@@ -51,6 +51,14 @@ const Header = () => {
     window.location.href = "/#contact-section"
   };
 
+  useEffect(() => {
+    const handleOpenEmi = () => setShowEMICalculator(true)
+    window.addEventListener("open-emi-calculator", handleOpenEmi as EventListener)
+    return () => {
+      window.removeEventListener("open-emi-calculator", handleOpenEmi as EventListener)
+    }
+  }, [])
+
   return (
     <>
       {/* Header */}
@@ -60,7 +68,7 @@ const Header = () => {
             <div className="flex items-center space-x-2">
               <Link href="/" className="flex items-center">
                 <img
-                  src="/pennyfarm-logo.jpeg"
+                  src="/images/pennyfarm-logo.png"
                   alt="Penny Farm Finance Logo"
                   className="h-14 w-auto"
                 />
@@ -78,13 +86,13 @@ const Header = () => {
                 href="/about"
                 className="text-foreground hover:text-primary transition-colors"
               >
-                About
+                About us  
               </Link>
               <Link
                 href="/products"
                 className="text-foreground hover:text-primary transition-colors"
               >
-                Products
+                Services
               </Link>
               <button
                 onClick={scrollToContact}

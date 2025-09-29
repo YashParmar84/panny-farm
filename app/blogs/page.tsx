@@ -201,7 +201,7 @@ export default function BlogsPage() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <img
-                  src="/pennyfarm-logo.jpeg"
+                  src="/images/pennyfarm-logo.png"
                   alt="Penny Farm Finance Logo"
                   className="h-8 w-auto"
                 />
@@ -242,8 +242,7 @@ export default function BlogsPage() {
               <h3 className="text-lg font-semibold mb-4">Information</h3>
               <div className="space-y-2 text-background/70">
                 <p>📞 +91 96649 82919</p>
-                <p>✉️ info@pennyfarmfinance.com</p>
-                <p>✉️ pennyfarmfiance@gmail.com</p>
+                <p>✉️ pennyfarmfinance@gmail.com</p>
               </div>
             </div>
 

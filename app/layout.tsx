@@ -5,6 +5,7 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
+import MobileActions from "@/components/mobile-actions"
 
 export const metadata: Metadata = {
   title: "Penny Farm Finance - Your Trusted Financial Partner",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
+        <MobileActions />
       </body>
     </html>
   )
