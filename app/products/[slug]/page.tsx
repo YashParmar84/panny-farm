@@ -1186,55 +1186,33 @@ Advantages of a Personal Loan:
     detailedDescription: `Buying a house is one of the biggest dreams come true for most people and an extravagant affair altogether. Imparting life to such a dream requires a lot of effort from the buyers' end and the best one can do to accommodate the home in their budget is through a home loan.
 A home loan can be opted to buy a new house/flat or a plot of land where you construct the house, and even for renovation, extension, and repairs to an existing house.
 
-Types of Home Loans in India
-Home Loan
+**Types of Home Loans in India**
 
-This is the most common type of home loan availed to purchase a house. There are many housing finance companies, public banks, and private banks that offer housing loans where you borrow money to purchase the house of your choice and repay the loan in monthly instalments.
-You can get up to 80%-90% of the house's market price in the form of financing. The lender will hold the house until you completely repay the loan.
+• **Home Loan** - This is the most common type of home loan availed to purchase a house. There are many housing finance companies, public banks, and private banks that offer housing loans where you borrow money to purchase the house of your choice and repay the loan in monthly instalments. You can get up to 80%-90% of the house's market price in the form of financing. The lender will hold the house until you completely repay the loan.
 
-Home Construction Loan
+• **Home Construction Loan** - This is the right home loan type if you already have a plot of land and you need financing to construct a house in that land.
 
-This is the right home loan type if you already have a plot of land and you need financing to construct a house in that land.
+• **Home Extension Loan** - Say you already own a house and you would like to extend the house with another room or another floor to accommodate the growing family. Home extension loan provides financing for this purpose.
 
-Home Extension Loan
+• **Home Improvement Loan** - A home improvement loan provides financing for renovating or repairing the house if there's any fault in the existing system, such as painting the house's interior or exterior, plumbing, upgrading the electrical system, waterproofing the ceiling, and more.
 
-Say you already own a house and you would like to extend the house with another room or another floor to accommodate the growing family. Home extension loan provides financing for this purpose.
+• **Home Loan Balance Transfer** - The current home loan interest rate may be overwhelming, or you may not be happy with your current lender's service; you can transfer the home loan's outstanding balance to a different lender who offers a lower interest rate and better service. Upon transfer, you can even check out the possibilities of a top-up loan on your existing one.
 
-Home Improvement Loan
+• **Composite Home Loan** - This type of home loan provides financing for purchasing the plot of land where you would like to construct a house and for the construction, both within a single loan.
 
-A home improvement loan provides financing for renovating or repairing the house if there's any fault in the existing system, such as painting the house's interior or exterior, plumbing, upgrading the electrical system, waterproofing the ceiling, and more.
+**Benefits of Taking a Home Loan**
 
-Home Loan Balance Transfer
+• **Tax Benefits** - The foremost benefit of a home loan is the income tax deduction you can claim on the interest and principal repayments. You can claim up to Rs.1.5 lakh on principal repayments u/s 80C, up to Rs.2 lakh on interest repayments u/s 24B, up to Rs.2 lakh on interest repayment in special circumstances u/s 80EE and 80EEA, and up to Rs.1.5 lakh on stamp duty expenses u/s 80C.
 
-The current home loan interest rate may be overwhelming, or you may not be happy with your current lender's service; you can transfer the home loan's outstanding balance to a different lender who offers a lower interest rate and better service. Upon transfer, you can even check out the possibilities of a top-up loan on your existing one.
+• **Lower Interest Rate** - The home loan interest rate is much lower as compared to any other loan types available. If you come across a cash crunch, you may get a top-up on the existing home loan at a lower interest rate than a personal loan to solve the issue.
 
-Composite Home Loan
+• **Due Diligence of Property** - When you go through a bank to purchase a house, the bank will conduct thorough checks on the property from the legal perspective and check if all the documents produced are valid. This due diligence check from the bank's end will reduce the risk of you being scammed. If the bank approves the property, that means you and your house are safe.
 
-This type of home loan provides financing for purchasing the plot of land where you would like to construct a house and for the construction, both within a single loan.
-Benefits of Taking a Home Loan
-Tax benefits
-The foremost benefit of a home loan is the income tax deduction you can claim on the interest and principal repayments. You can claim up to Rs.1.5 lakh on principal repayments u/s 80C, up to Rs.2 lakh on interest repayments u/s 24B, up to Rs.2 lakh on interest repayment in special circumstances u/s 80EE and 80EEA, and up to Rs.1.5 lakh on stamp duty expenses u/s 80C.
+• **Long Repayment Tenure** - Unlike any other loans, home loans come with longer repayment tenure, as much as 25-30 years. This is owing to the significant loan amount one will have to borrow to purchase a house. Spreading the loan amount and interest applicable over a longer tenure will reduce the monthly EMIs reducing the borrower's burden.
 
-Lower interest rate
-The home loan interest rate is much lower as compared to any other loan types available. If you come across a cash crunch, you may get a top-up on the existing home loan at a lower interest rate than a personal loan to solve the issue.
+• **No Prepayment Penalty** - When you take a floating-rate home loan, you can make prepayments towards the loan whenever you have a lump sum at hand without having to pay any prepayment penalty. This will help you close the home loan much before the set loan tenure.
 
-Due diligence of property
-
-When you go through a bank to purchase a house, the bank will conduct thorough checks on the property from the legal perspective and check if all the documents produced are valid.
-This due diligence check from the bank's end will reduce the risk of you being scammed. If the bank approves the property, that means you and your house are safe.
-
-Long repayment tenure
-
-Unlike any other loans, home loans come with longer repayment tenure, as much as 25-30 years. This is owing to the significant loan amount one will have to borrow to purchase a house.
-Spreading the loan amount and interest applicable over a longer tenure will reduce the monthly EMIs reducing the borrower's burden.
-
-No prepayment penalty
-
-When you take a floating-rate home loan, you can make prepayments towards the loan whenever you have a lump sum at hand without having to pay any prepayment penalty. This will help you close the home loan much before the set loan tenure.
-
-Balance transfer facility
-
-You can transfer the home loan from one lender to another for several reasons, such as the interest rate, service charges, customer service experience, and others.`,
+• **Balance Transfer Facility** - You can transfer the home loan from one lender to another for several reasons, such as the interest rate, service charges, customer service experience, and others.`,
     originalFaqs: [
       {
         question: "What is the maximum loan amount I can get?",
@@ -1484,28 +1462,32 @@ export default function ProductDetailPage() {
           </h3>
         )
       }
-      // Check if it's a numbered list item
+      // Standalone numbered paragraph → bullet item
       else if (/^\d+\./.test(paragraph)) {
         const parts = paragraph.split('\n')
-        const mainHeading = parts[0]
+        const mainHeading = parts[0].replace(/^\d+\.\s*/, '')
         const subContent = parts.slice(1)
         return (
-          <div key={index} className="mb-6">
-            <h4 className="text-xl font-medium mb-2 text-foreground">{mainHeading}</h4>
-            {subContent.map((line, idx) => {
-              if (line.startsWith('• ')) {
-                return (
-                  <ul key={idx} className="list-disc list-inside ml-6 mb-2">
-                    <li>{line.replace('• ', '')}</li>
-                  </ul>
-                )
-              } else {
-                return (
-                  <p key={idx} className="text-muted-foreground mb-2">{line}</p>
-                )
-              }
-            })}
-          </div>
+          <ul key={index} className="list-disc list-inside ml-6 mb-2">
+            <li>
+              <span className="font-medium">{mainHeading}</span>
+              {subContent.length > 0 && (
+                <div className="mt-1 ml-4">
+                  {subContent.map((line, idx) =>
+                    line.startsWith('• ')
+                      ? (
+                        <ul key={idx} className="list-disc list-inside ml-6 mb-1">
+                          <li>{line.replace('• ', '')}</li>
+                        </ul>
+                        )
+                      : (
+                        <p key={idx} className="text-muted-foreground mb-1">{line}</p>
+                        )
+                  )}
+                </div>
+              )}
+            </li>
+          </ul>
         )
       }
       // Check if it's a bullet list
@@ -1520,6 +1502,24 @@ export default function ProductDetailPage() {
               {items.map((item, idx) => (
                 <li key={idx} className="text-muted-foreground">{item.replace('• ', '')}</li>
               ))}
+            </ul>
+          </div>
+        )
+      }
+      // Paragraph with numbered lines → bullet list
+      else if (/\n\d+\./.test(paragraph)) {
+        const lines = paragraph.split('\n')
+        const title = lines[0]
+        const items = lines.slice(1)
+        return (
+          <div key={index} className="mb-6">
+            <p className="font-medium mb-2 text-foreground">{title}</p>
+            <ul className="list-disc list-inside ml-6 space-y-1">
+              {items
+                .filter((l) => /^\d+\./.test(l))
+                .map((l, idx) => (
+                  <li key={idx} className="text-muted-foreground">{l.replace(/^\d+\.\s*/, '')}</li>
+                ))}
             </ul>
           </div>
         )
@@ -1547,7 +1547,7 @@ export default function ProductDetailPage() {
           </Link>
           <span>/</span>
           <Link href="/products" className="hover:text-primary">
-            Products
+            Services
           </Link>
           <span>/</span>
           <span className="text-foreground">{product.title}</span>
