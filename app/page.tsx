@@ -170,13 +170,22 @@ const blogs = [
   },
 ]
 
+// const bankLogos = [
+//   { name: "BOB", src: "/placeholder-logo.png" },
+//   { name: "HDFC", src: "/placeholder-logo.png" },
+//   { name: "ICICI", src: "/placeholder-logo.png" },
+//   { name: "KOTAK", src: "/placeholder-logo.png" },
+//   { name: "SBI", src: "/placeholder-logo.png" },
+//   { name: "AXIS", src: "/placeholder-logo.png" },
+// ]
+
 const bankLogos = [
-  { name: "BOB", src: "/placeholder-logo.png" },
-  { name: "HDFC", src: "/placeholder-logo.png" },
-  { name: "ICICI", src: "/placeholder-logo.png" },
-  { name: "KOTAK", src: "/placeholder-logo.png" },
-  { name: "SBI", src: "/placeholder-logo.png" },
-  { name: "AXIS", src: "/placeholder-logo.png" },
+  { name: "BOB", logo: "BOB" },
+  { name: "HDFC", logo: "HDFC" },
+  { name: "ICICI", logo: "ICICI" },
+  { name: "KOTAK", logo: "KOTAK" },
+  { name: "SBI", logo: "SBI" },
+  { name: "AXIS", logo: "AXIS" },
 ]
 
 export default function HomePage() {
@@ -245,25 +254,36 @@ export default function HomePage() {
       </Button> */}
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden" data-aos="aos-fade-up">
-        <div className="absolute inset-0 gradient-bg opacity-5"></div>
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+      <section className="relative h-screen min-h-[600px] overflow-hidden" data-aos="aos-fade-up">
+        {/* Full width background image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/happy-family-with-financial-advisor-discussing-loa.jpg"
+            alt="Financial Advisory"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient overlay for fade effect from left */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
+        </div>
+
+        {/* Content overlay */}
+        <div className="relative z-10 h-full flex items-center">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl">
+              <Badge className="mb-4 bg-white/20 text-white border-white/30 backdrop-blur-sm">
                 India's Trusted Financial Partner
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-balance">
+              <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-white text-balance drop-shadow-lg">
                 Your Financial Dreams, <span className="gradient-text">Our Priority</span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 text-pretty">
+              <p className="text-xl lg:text-2xl text-white/90 mb-8 text-pretty drop-shadow-md max-w-2xl">
                 Get instant approvals, competitive rates, and personalized financial solutions. Join over 50,000+
                 satisfied customers who trust us with their financial needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground animate-pulse-glow"
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground animate-pulse-glow shadow-xl"
                   onClick={() => window.open('tel:+919664982919', '_self')}
                 >
                   <Phone className="w-5 h-5 mr-2" />
@@ -272,7 +292,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-green-500 text-green-500 hover:bg-green-500 hover:text-white bg-transparent"
+                  className="border-green-500 text-green-500 hover:bg-green-500 hover:text-white bg-transparent backdrop-blur-sm shadow-xl"
                   onClick={() => window.open('https://wa.me/919664982919', '_blank')}
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
@@ -280,13 +300,13 @@ export default function HomePage() {
                 </Button>
               </div>
 
-              <div>
-                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-8">
+              <div className="mt-12">
+                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
                   <div className="flex -space-x-2 sm:-space-x-3">
                     {[1, 2, 3, 4].map((num) => (
                       <div
                         key={num}
-                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-4 border-white overflow-hidden ring-1 sm:ring-2 ring-primary/20 hover-scale"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 sm:border-4 border-white/50 overflow-hidden ring-1 sm:ring-2 ring-white/30 hover-scale"
                       >
                         <img
                           src={`https://api.dicebear.com/7.x/avataaars/svg?seed=user${num}`}
@@ -295,22 +315,13 @@ export default function HomePage() {
                         />
                       </div>
                     ))}
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[royalblue] from-primary to-secondary border-2 sm:border-4 border-white flex items-center justify-center text-white text-xs sm:text-sm font-bold ring-1 sm:ring-2 ring-secondary/30 hover-scale">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 backdrop-blur-sm border-2 sm:border-4 border-white/50 flex items-center justify-center text-white text-xs sm:text-sm font-bold ring-1 sm:ring-2 ring-white/30 hover-scale">
                       500+
                     </div>
                   </div>
-                  <p className="text-sm sm:text-base font-medium text-center sm:text-left">Join 500+ satisfied clients in their financial journey</p>
+                  <p className="text-sm sm:text-base font-medium text-white/90 text-center sm:text-left drop-shadow-sm">Join 500+ satisfied clients in their financial journey</p>
                 </div>
-                
               </div>
-            </div>
-
-            <div data-aos="aos-fade-left">
-              <img
-                src="/happy-family-with-financial-advisor-discussing-loa.jpg"
-                alt="Financial Advisory"
-                className="w-full h-auto rounded-2xl shadow-2xl"
-              />
             </div>
           </div>
         </div>
@@ -323,14 +334,16 @@ export default function HomePage() {
             <div>
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">About Us</Badge>
               <h2 className="text-4xl font-bold mb-6">Your Money Concerns are now Completely Resolved.</h2>
+
               <p className="text-lg text-muted-foreground mb-6">
-              Penny Farm Finance is a preferred partner of leading financial institutions, offering you the most competitive rates throughout our array of loans. Our nearly two decades of industry experience have given us the knowledge and skills necessary to choose the best loan for your circumstances. 
+              Penny Farm Finance is a preferred partner of leading financial institutions, offering you the most competitive rates throughout our array of loans. Our nearly two decades of industry experience have given us the knowledge and skills necessary to choose the best loan for your circumstances.
               </p>
               <p className="text-muted-foreground mb-8">
                We take responsibility for our deeds and maintain transparency in our operations.
 Our greatest asset is your trust—something you can always rely on!
 Penny Farm Finance is your constant companion as you strive to live the best life imaginable. For you, we recommend the low cost. We bolster and reassure you that there is every chance you will be able to realise every ambition you have ever had.
               </p>
+
               <Link href="/about">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground animate-pulse-glow">
                   Learn More About Us
@@ -378,7 +391,7 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
                   }`}
                 >
                   <div className="w-20 h-20 bg-primary/10 rounded-lg flex items-center justify-center overflow-hidden">
-                    <img src={bank.src} alt={`${bank.name} logo`} className="max-w-[70%] max-h-[70%] object-contain" />
+                    <span className="text-sm font-semibold">{bank.logo}</span>
                   </div>
                 </div>
               ))}
@@ -414,7 +427,7 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
                     <CardTitle className="text-xl">{product.title}</CardTitle>
                     <CardDescription className="text-muted-foreground">{product.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  {/* <CardContent>
                     <div className="space-y-4">
                       <div className="grid grid-cols-3 gap-2 text-sm">
                         <div>
@@ -447,7 +460,15 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
                         </Button>
                       </Link>
                     </div>
-                  </CardContent>
+                  </CardContent> */}
+                       <div className="flex gap-2 pt-4 p-4">
+                        <Link href={`/products/${product.id}`} className="flex-1">
+                          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                            Learn More
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </Button>
+                        </Link>
+                      </div>
                 </Card>
               )
             })}
@@ -489,9 +510,24 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">Personalized Service</h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
-                Penny is able to provide tailored support and direction during our application procedure.
-              </p>
+              <div className="space-y-2 text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Tailored support throughout application process</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Dedicated relationship manager</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Customized financial solutions</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Personal guidance at every step</span>
+                </div>
+              </div>
             </div>
 
             <div className="group p-6 rounded-2xl transition-all duration-300 hover:bg-primary/5 hover:shadow-xl hover:-translate-y-1" data-aos="aos-fade-up">
@@ -502,10 +538,24 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">Expertise You Can Trust</h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
-                Our team of seasoned experts will collaborate directly with you to comprehend your particular
-                requirements and financial circumstances.
-              </p>
+              <div className="space-y-2 text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Seasoned financial experts</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Deep understanding of your needs</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Comprehensive financial analysis</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Tailored financial circumstances assessment</span>
+                </div>
+              </div>
             </div>
 
             <div className="group p-6 rounded-2xl transition-all duration-300 hover:bg-primary/5 hover:shadow-xl hover:-translate-y-1" data-aos="aos-fade-up">
@@ -516,9 +566,24 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">Transparency and Reliability</h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
-                It's crucial to make sure a consultant is trustworthy and transparent before approaching them.
-              </p>
+              <div className="space-y-2 text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Complete transparency in operations</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Trustworthy consultation approach</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Reliable service guarantee</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Honest and clear communication</span>
+                </div>
+              </div>
             </div>
 
             <div className="group p-6 rounded-2xl transition-all duration-300 hover:bg-primary/5 hover:shadow-xl hover:-translate-y-1" data-aos="aos-fade-up">
@@ -529,89 +594,25 @@ Penny Farm Finance is your constant companion as you strive to live the best lif
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 blur transition duration-300"></div>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">Doorstep Assistance</h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
-                We guarantee that you may easily begin your financial journey with our simplified application process.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      {/* <section className="py-20 bg-muted/30" data-aos="aos-fade-up">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Testimonials</Badge>
-            <h2 className="text-4xl font-bold mb-4">What Our Customers Say</h2>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Card className="border-border/50">
-              <CardContent className="p-8">
-                <div className="text-center">
-                  <div className="flex justify-center mb-4">
-                    {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <blockquote className="text-xl italic mb-6 text-muted-foreground">
-                    "{testimonials[activeTestimonial].content}"
-                  </blockquote>
-                  <div>
-                    <div className="font-semibold text-lg">{testimonials[activeTestimonial].name}</div>
-                    <div className="text-muted-foreground">{testimonials[activeTestimonial].role}</div>
-                  </div>
+              <div className="space-y-2 text-muted-foreground">
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Convenient doorstep service</span>
                 </div>
-              </CardContent>
-            </Card>
-
-            <div className="flex justify-center mt-6 space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === activeTestimonial ? "bg-primary" : "bg-border"
-                  }`}
-                />
-              ))}
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Simplified application process</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Easy documentation collection</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-green-500 mr-2 text-sm">✓</span>
+                  <span className="text-sm">Hassle-free financial journey initiation</span>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* FAQ Section */}
-      <section className="py-20" data-aos="aos-fade-up">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-secondary/10 text-secondary border-secondary/20">FAQ</Badge>
-            <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Find answers to common questions about our loan products and services
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="border-border/50 overflow-hidden" data-aos="aos-fade-up">
-                <CardHeader
-                  className="cursor-pointer hover:bg-muted/50 transition-colors"
-                  onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
-                >
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-lg">{faq.question}</CardTitle>
-                    <ChevronDown
-                      className={`w-5 h-5 transition-transform ${expandedFAQ === index ? "rotate-180" : ""}`}
-                    />
-                  </div>
-                </CardHeader>
-                {expandedFAQ === index && (
-                  <CardContent className="animate-fade-in">
-                    <p className="text-muted-foreground">{faq.answer}</p>
-                  </CardContent>
-                )}
-              </Card>
-            ))}
           </div>
         </div>
       </section>

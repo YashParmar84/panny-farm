@@ -103,7 +103,7 @@ export default function AboutPage() {
           </div>
 
           {/* Vision & Mission */}
-          <div className="grid md:grid-cols-2 gap-8 mb-20">
+          {/* <div className="grid md:grid-cols-2 gap-8 mb-20">
             <Card className="p-8">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <Target className="w-6 h-6 text-primary" />
@@ -125,7 +125,7 @@ export default function AboutPage() {
                 dedicated service
               </p>
             </Card>
-          </div>
+          </div> */}
 
           {/* Expertise Section */}
           <div className="text-center mb-12">
